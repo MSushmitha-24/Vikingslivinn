@@ -61,7 +61,13 @@ async function requireRole(role) {
   return data.user;
 }
 
-document.querySelector("[data-logout]")?.addEventListener("click", () => {
-  clearSession();
-  window.location.href = "/login.html";
+// document.querySelector("[data-logout]")?.addEventListener("click", () => {
+//   clearSession();
+//   window.location.href = "/login.html";
+// });
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelector("[data-logout]")?.addEventListener("click", () => {
+    clearSession();
+    window.location.href = "/login.html";
+  });
 });
