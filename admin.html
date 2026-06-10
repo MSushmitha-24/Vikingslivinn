@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | Vikings Livinn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="portal-page">
+    <header class="portal-header">
+      <a class="brand" href="/" aria-label="Vikings Livinn home">
+        <span class="brand-mark">VL</span>
+        <span>
+          <strong>Vikings Livinn</strong>
+          <small>Admin Portal</small>
+        </span>
+      </a>
+      <button class="btn secondary portal-logout" type="button" data-logout>Logout</button>
+    </header>
+
+    <main class="portal-main" data-role="admin">
+      <section class="portal-title">
+        <p class="eyebrow">Admin controls</p>
+        <h1>Manage customers, rent receipts and complaints.</h1>
+      </section>
+
+      <section class="portal-grid">
+        <form class="portal-card" data-customer-form>
+          <h2>New customer login</h2>
+          <label>Name<input type="text" name="name" required /></label>
+          <label>Email<input type="email" name="email" required /></label>
+          <label>Phone<input type="tel" name="phone" /></label>
+          <label>Room<input type="text" name="room" /></label>
+          <label>Password<input type="password" name="password" required /></label>
+          <button class="btn primary full" type="submit">Create Login</button>
+          <p class="form-status" data-customer-status aria-live="polite"></p>
+        </form>
+
+        <form class="portal-card" data-receipt-form>
+          <h2>Generate monthly rent receipt</h2>
+          <label>Customer<select name="customerId" data-customer-select required></select></label>
+          <label>Month<input type="month" name="month" required /></label>
+          <label>Amount<input type="number" name="amount" min="1" step="1" required /></label>
+          <label>Payment Date<input type="date" name="paymentDate" /></label>
+          <button class="btn primary full" type="submit">Generate Receipt</button>
+          <p class="form-status" data-receipt-status aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="portal-card">
+        <div class="portal-section-heading">
+          <h2>Current complaint tracker</h2>
+          <button class="btn ghost" type="button" data-refresh-complaints>Refresh</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Customer</th>
+                <th>Subject</th>
+                <th>Details</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody data-complaints-table></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="auth.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>
