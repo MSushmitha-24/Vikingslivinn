@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer | Vikings Livinn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="portal-page">
+    <header class="portal-header">
+      <a class="brand" href="/" aria-label="Vikings Livinn home">
+        <span class="brand-mark">VL</span>
+        <span>
+          <strong>Vikings Livinn</strong>
+          <small>Customer Portal</small>
+        </span>
+      </a>
+      <button class="btn secondary portal-logout" type="button" data-logout>Logout</button>
+    </header>
+
+    <main class="portal-main" data-role="customer">
+      <section class="portal-title">
+        <p class="eyebrow">Customer access</p>
+        <h1>Download your receipts and submit complaints.</h1>
+      </section>
+
+      <section class="portal-grid">
+        <div class="portal-card">
+          <h2>My rent receipts</h2>
+          <div class="receipt-list" data-receipt-list></div>
+        </div>
+
+        <form class="portal-card" data-complaint-form>
+          <h2>Submit complaint</h2>
+          <label>Subject<input type="text" name="subject" required /></label>
+          <label>Details<textarea name="message" rows="6" required></textarea></label>
+          <button class="btn primary full" type="submit">Submit Complaint</button>
+          <p class="form-status" data-complaint-status aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="auth.js"></script>
+    <script src="customer.js"></script>
+  </body>
+</html>
