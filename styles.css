@@ -261,9 +261,9 @@ h3 {
 }
 
 .btn.secondary {
-  color: var(--white);
-  border-color: rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.1);
+  color: black;
+  border-color: rgba(161, 35, 35, 0.7);
+  background: rgba(96, 138, 18, 0.1);
 }
 
 .btn.full {
@@ -668,7 +668,7 @@ textarea {
 }
 
 .portal-logout {
-  color: var(--teal-dark);
+  color: black;
   border-color: var(--line);
   background: var(--white);
 }
