@@ -65,9 +65,14 @@ async function requireRole(role) {
 //   clearSession();
 //   window.location.href = "/login.html";
 // });
-window.addEventListener("DOMContentLoaded", () => {
-  document.querySelector("[data-logout]")?.addEventListener("click", () => {
-    clearSession();
-    window.location.href = "/login.html";
-  });
-});
+
+window.onload = function () {
+  const logoutBtn = document.querySelector("[data-logout]");
+
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      clearSession();
+      window.location.href = "/login.html";
+    });
+  }
+};
